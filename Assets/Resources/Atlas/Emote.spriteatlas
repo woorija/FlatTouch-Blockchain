@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Emote
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: cb21df52419b9ba4994fc201611ef23c, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 1655328054, guid: 0e340230e76916b4da981ab808eb86ec, type: 3}
+  - {fileID: 1832895109, guid: 638d4cc0511e3b543b2f65cbe7f571d9, type: 3}
+  - {fileID: 1933227674, guid: aa8e60e0d5fd21847bcb66a510ae9579, type: 3}
+  - {fileID: 1973666850, guid: 72f1def070616ef4a9467fe4b4feb1d8, type: 3}
+  - {fileID: 695609787, guid: 1e6d5121c84422144852369ed523cfb4, type: 3}
+  - {fileID: -1505655845, guid: 565411411fa56f5428e35f61a1b3b1b8, type: 3}
+  - {fileID: 985981808, guid: 6a49d2919da637740ad6daabd2edc893, type: 3}
+  - {fileID: 650147250, guid: 062716916df529e41b88c8764cfa73a5, type: 3}
+  - {fileID: 1348483674, guid: d9f7dba1eed11314794dccd22cbf9b17, type: 3}
+  - {fileID: 1419533600, guid: d9f7dba1eed11314794dccd22cbf9b17, type: 3}
+  - {fileID: -1510071179, guid: 0b76556285caa7c4f87ed92b758a86f7, type: 3}
+  - {fileID: 287598260, guid: b62572a3fa047334083fd64f682469a9, type: 3}
+  - {fileID: 463039102, guid: bba6c8c3359eab948b9e154f982c5b1e, type: 3}
+  - {fileID: 1262231598, guid: 47c68556d9f22ac479c600e9587e5264, type: 3}
+  - {fileID: 923865964, guid: 38a6fae6a4f527b42b5831749e3d763f, type: 3}
+  - {fileID: 1309989492, guid: 3cd0edf63f1dc3843ad859435bcd6821, type: 3}
+  - {fileID: -1919285991, guid: 21bfc0074a7a9fa4da1fd79779c20572, type: 3}
+  - {fileID: -1600111857, guid: e2b08db7b1d124c4490106c14b301259, type: 3}
+  - {fileID: 2101094563, guid: 4b668428168eab846871d852bdb0c138, type: 3}
+  - {fileID: 1859671883, guid: 80bbf3684d5dac5419caa163d2da2d4c, type: 3}
+  - {fileID: -1763615552, guid: a5bfd5e8f11b3934f916c5fe4c3d2021, type: 3}
+  - {fileID: 681018792, guid: 73e23519cb0b4274e8b4d9d93274915c, type: 3}
+  - {fileID: -1174531672, guid: 792db349f63379b4090e166f6e40e9e9, type: 3}
+  - {fileID: 1770434926, guid: 70ae70aa0d3a17143ab9efa920d9969b, type: 3}
+  - {fileID: 1105179921, guid: 0b0e3eeb319357b429edf49c4efc478a, type: 3}
+  - {fileID: -2052555609, guid: e7ed04fb915788d42a3174237954d7c4, type: 3}
+  - {fileID: 1356297395, guid: 84246d0cfefca334096a68f4d26541b5, type: 3}
+  - {fileID: 1240432009, guid: 0b271e1ee67e5704682c7a8d0eb468a9, type: 3}
+  - {fileID: 1713326891, guid: ae54b38e820313440993756dde39eca4, type: 3}
+  - {fileID: -1647047040, guid: 8418bd9e7b0a37b4e95fe966dffbc9a5, type: 3}
+  - {fileID: -1864843574, guid: 205ab6ae332948941a1bf809c521136a, type: 3}
+  - {fileID: -1607392061, guid: 6849cfcee107ed2488b3bbafb0857856, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Witch_Emote10
+  - Player_Emote3
+  - King_Emote3
+  - Witch_Emote8
+  - Raccoon_Emote1
+  - Player_Emote1
+  - Player_Emote7
+  - King_Emote4
+  - "\uD45C\uC885 \uC790\uC138. \uAD81\uAE08_1"
+  - Player_Emote8
+  - Rabbit_Emote1
+  - Player_Emote5
+  - Rabbit_Emote4
+  - Witch_Emote2
+  - Player_Emote4
+  - Raccoon_Emote3
+  - Witch_Emote1
+  - King_Emote2
+  - Witch_Emote7
+  - Witch_Emote4
+  - Witch_Emote3
+  - Player_Emote2
+  - Rabbit_Emote3
+  - Witch_Emote6
+  - King_Emote1
+  - Witch_Emote9
+  - Player_Emote9
+  - Rabbit_Emote5
+  - Witch_Emote5
+  - Player_Emote6
+  - Rabbit_Emote2
+  - Raccoon_Emote2
+  m_RenderDataMap: {}
+  m_Tag: Emote
+  m_IsVariant: 0

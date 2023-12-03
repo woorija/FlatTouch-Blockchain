@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleLogin.unity
+    guid: 1c1af5c5662d105498b2412267dde0df
+  - enabled: 1
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleMain.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleLogin.unity
+    guid: 1c1af5c5662d105498b2412267dde0df
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleMain.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleLogin.unity
+    guid: 1c1af5c5662d105498b2412267dde0df
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleMain.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleLogin.unity
+    guid: 1c1af5c5662d105498b2412267dde0df
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleMain.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleLogin.unity
+    guid: 1c1af5c5662d105498b2412267dde0df
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleMain.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleLogin.unity
+    guid: 1c1af5c5662d105498b2412267dde0df
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleMain.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleLogin.unity
+    guid: 1c1af5c5662d105498b2412267dde0df
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleMain.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleLogin.unity
+    guid: 1c1af5c5662d105498b2412267dde0df
+  - enabled: 0
+    path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleMain.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/00_LogoScene.unity
+    guid: 79c6e7ae36f8c9b409cbe35cee43917a
+  - enabled: 1
+    path: Assets/Scenes/01_IntroScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/02_TitleScene.unity
+    guid: acad28b13c773ed4583700627c9ae921
+  - enabled: 1
+    path: Assets/Scenes/03_MenuScene.unity
+    guid: 2b7c23e67fba6294f8fd84e4527e522c
+  - enabled: 1
+    path: Assets/Scenes/04_StageScene.unity
+    guid: 420fb5d2225fe8a4b804b261031a5e5f
+  - enabled: 1
+    path: Assets/Scenes/05_StoryScene.unity
+    guid: cc617f97a52405e4c8b1bfde6cd5ce55
+  - enabled: 1
+    path: Assets/Scenes/06_EndingScene.unity
+    guid: f16d3af912b9b274eb8586ae6fe1d8bb
+  - enabled: 1
+    path: Assets/Scenes/07_TutorialScene.unity
+    guid: 86434f71b50419c4d9460bd0ce0b0485
+  m_configObjects: {}
