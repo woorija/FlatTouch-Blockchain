@@ -40,6 +40,7 @@ public class badgeUIManager : MonoBehaviour
         Web3singleton.Instance.onUnlock += MintUnlock;
         Web3singleton.Instance.onLock += MintLock;
         Web3singleton.Instance.onAlready += AlreadyMint;
+        Web3singleton.Instance.onSetImage += BadgeImageSetting;
         for(int i=0;i<mintButtons.Length;i++)
         {
             int index = i + 1;
@@ -51,6 +52,10 @@ public class badgeUIManager : MonoBehaviour
     private void OnDestroy()
     {
         Web3singleton.Instance.onIsOwner -= IsOwner;
+        Web3singleton.Instance.onUnlock -= MintUnlock;
+        Web3singleton.Instance.onLock -= MintLock;
+        Web3singleton.Instance.onAlready -= AlreadyMint;
+        Web3singleton.Instance.onSetImage -= BadgeImageSetting;
     }
     public void IsOwner()
     {
@@ -119,42 +124,35 @@ public class badgeUIManager : MonoBehaviour
     }
     public void MintAllBadge()
     {
-        try
-        {
-            Web3singleton.Instance.SendMintAllBadge();
-            realMintButton.onClick.RemoveAllListeners();
-        }
-        catch(Web3Exception e)
-        {
-            Debug.LogError(e.Message);
-            realMintButton.onClick.AddListener(MintAllBadge);
-        }
+        Web3singleton.Instance.SendMintAllBadge();
+        onClickMintAllBadge();
+    }
+    private async void onClickMintAllBadge()
+    {
+        realMintButton.onClick.RemoveAllListeners();
+        await Task.Delay(10000);
+        realMintButton.onClick.AddListener(MintAllBadge);
     }
     public void WithdrawEther()
     {
-        try
-        {
-            Web3singleton.Instance.SendWithdrawEther();
-            withdrawEtherButton.onClick.RemoveAllListeners();
-        }
-        catch (Web3Exception e)
-        {
-            Debug.LogError(e.Message);
-            withdrawEtherButton.onClick.AddListener(WithdrawEther);
-        }
+        Web3singleton.Instance.SendWithdrawEther();
+        OnClickWithdrawEther();
+    }
+    private async void OnClickWithdrawEther()
+    {
+        withdrawEtherButton.onClick.RemoveAllListeners();
+        await Task.Delay(10000);
+        withdrawEtherButton.onClick.AddListener(WithdrawEther);
     }
     public void TransferBadge(int _index)
     {
-        try
-        {
-            Web3singleton.Instance.SendTransferBadge(_index);
-            mintButtons[_index].onClick.RemoveAllListeners();
-        }
-        catch (Web3Exception e)
-        {
-            Debug.LogError(e.Message);
-            mintButtons[_index].onClick.AddListener(() => TransferBadge(_index + 1));
-        }
+        Web3singleton.Instance.SendTransferBadge(_index);
+        OnClickTransferBadge(_index);
     }
-
+    private async void OnClickTransferBadge(int _index)
+    {
+        mintButtons[_index].onClick.RemoveAllListeners();
+        await Task.Delay(10000);
+        mintButtons[_index].onClick.AddListener(() => TransferBadge(_index + 1));
+    }
 }

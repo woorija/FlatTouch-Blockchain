@@ -13,6 +13,7 @@ public class WalletConnectUI : MonoBehaviour
     [SerializeField] private Button _backButton;
 
     [SerializeField] private Transform _container;
+    [SerializeField] GameObject UITouchLock;
 
     private void Start()
     {
@@ -61,8 +62,9 @@ public class WalletConnectUI : MonoBehaviour
         _qrCodeImage.sprite = qrCodeSprite;
     }
 
-    private void Disable()
+    public void Disable()
     {
         _container.gameObject.SetActive(false);
+        UITouchLock.SetActive(false);
     }
 }

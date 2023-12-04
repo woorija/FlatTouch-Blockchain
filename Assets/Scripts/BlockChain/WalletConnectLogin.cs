@@ -29,6 +29,8 @@ public class WalletConnectLogin : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] public Button loginButton;
+    [SerializeField] GameObject DisconnectButton;
+    [SerializeField] GameObject UITouchLock;
 
     [Header("Wallet Connect")]
     [SerializeField]
@@ -80,6 +82,7 @@ public class WalletConnectLogin : MonoBehaviour
 
     private async void LoginClicked()
     {
+        UITouchLock.SetActive(true);
         await TryLogin();
     }
 
@@ -106,9 +109,12 @@ public class WalletConnectLogin : MonoBehaviour
 
         var address = await Web3singleton.Instance.GlobalWeb3.Signer.GetAddress();
         PlayerPrefs.SetString("Address", address);
+        loginButton.gameObject.SetActive(false);
+        DisconnectButton.SetActive(true);
         Web3singleton.Instance.onIsOwner.Invoke();
         Web3singleton.Instance.GetBadgeSprites();
         Web3singleton.Instance.BadgeCheck();
+        walletConnectModal.Disable();
     }
 
     protected Web3Builder ConfigureWeb3Services(Web3Builder web3Builder)

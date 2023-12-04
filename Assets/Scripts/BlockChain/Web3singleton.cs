@@ -29,7 +29,7 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
     public Web3 GlobalWeb3;
     [SerializeField] ErrorPopup errorPopup;
 
-    [SerializeField] Sprite[] badgeUiSprites;
+    public Sprite[] badgeUiSprites;
     [SerializeField] RawImage rawImage;
 
     public Contract erc1155Contract;
@@ -43,6 +43,7 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
     public Action<int> onLock;
     public Action<int> onUnlock;
     public Action<int> onAlready;
+    public Action<Sprite, int> onSetImage;
     protected override void Awake()
     {
         base.Awake();
@@ -101,24 +102,47 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
             {
                 hasBadge[i] = true;
             }
-            Debug.Log(batchBalances[i]);
-
-            //badgeUi.BadgeImageSetting(badgeUiSprites[i], i);
-            
+            else
+            {
+                hasBadge[i] = false;
+            }
+            Debug.Log(batchBalances[i]);  
         }
         for (int i = 0;i < GameManager.Instance.stageCleared; i++)
         {
             if (batchBalances[i] == 0)
             {
                 onUnlock(i);
-                //badgeUi.MintUnlock(i);
             }
             else
             {
                 onAlready(i);
-               // badgeUi.AlreadyMint(i);
             }
         }
+        await SetBadgesImage();
+    }
+    public async Task SetBadgesImage()
+    {
+        for(int i=0;i < hasBadge.Length;i++)
+        {
+            if (hasBadge[i])
+            {
+                if (badgeUiSprites[i] != null)
+                {
+                    onSetImage(badgeUiSprites[i], i);
+                }
+                else
+                {
+                    await Task.Delay(1000);
+                    i--;
+                    continue;
+                }
+            }
+        }
+    }
+    public void SetBadgeImage()
+    {
+
     }
     public async void SendMintAllBadge()
     {
@@ -137,7 +161,7 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
     }
     public async void SendTransferBadge(int _index)
     {
-        var transactionRequest = new TransactionRequest { Value = new HexBigInteger(10000000000000000) };
+        var transactionRequest = new TransactionRequest { Value = new HexBigInteger(10000000000000000) }; // 0.01eth
         await erc1155Contract.Send("transferBadge", new object[] { _index }, transactionRequest);
     }
     public async Task<string> GetOwner()

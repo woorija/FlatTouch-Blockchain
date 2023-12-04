@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleLogin.unity
     guid: 1c1af5c5662d105498b2412267dde0df
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples/web3.unity SDK/2.5.4/Web3.Unity Samples/Scenes/SampleMain.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
