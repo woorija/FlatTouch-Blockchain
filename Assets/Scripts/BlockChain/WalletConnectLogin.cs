@@ -31,6 +31,7 @@ public class WalletConnectLogin : MonoBehaviour
     [SerializeField] public Button loginButton;
     [SerializeField] GameObject DisconnectButton;
     [SerializeField] GameObject UITouchLock;
+    [SerializeField] TMP_Text walletAddress;
 
     [Header("Wallet Connect")]
     [SerializeField]
@@ -78,6 +79,8 @@ public class WalletConnectLogin : MonoBehaviour
 #endif
         yield return FetchSupportedWallets();
         loginButton.onClick.AddListener(LoginClicked);
+        string address = PlayerPrefs.GetString("Address", "");
+        walletAddress.text = address;
     }
 
     private async void LoginClicked()
@@ -109,6 +112,7 @@ public class WalletConnectLogin : MonoBehaviour
 
         var address = await Web3singleton.Instance.GlobalWeb3.Signer.GetAddress();
         PlayerPrefs.SetString("Address", address);
+        walletAddress.text = address;
         loginButton.gameObject.SetActive(false);
         DisconnectButton.SetActive(true);
         Web3singleton.Instance.onIsOwner.Invoke();

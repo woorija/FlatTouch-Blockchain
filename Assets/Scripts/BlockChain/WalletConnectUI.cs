@@ -9,7 +9,6 @@ using ZXing;
 public class WalletConnectUI : MonoBehaviour
 {
     [SerializeField] private Image _qrCodeImage;
-    [SerializeField] private Button _copyToClipboardButton;
     [SerializeField] private Button _backButton;
 
     [SerializeField] private Transform _container;
@@ -28,16 +27,8 @@ public class WalletConnectUI : MonoBehaviour
         string uri = data.Uri;
 
         GenerateQrCode(uri);
-
-        SetClipboard(uri);
     }
 
-    private void SetClipboard(string uri)
-    {
-        _copyToClipboardButton.onClick.RemoveAllListeners();
-
-        _copyToClipboardButton.onClick.AddListener(delegate { GUIUtility.systemCopyBuffer = uri; });
-    }
 
     private static Color32[] Encode(string textForEncoding, int width, int height)
     {

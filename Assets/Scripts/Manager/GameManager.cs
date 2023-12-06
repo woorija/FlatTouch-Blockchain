@@ -99,8 +99,24 @@ public class GameManager : SingletonBehaviour<GameManager>
         }
         audioVolume = PlayerPrefs.GetFloat("Volume", 0.3f);
         AudioManager.Instance.VolumeControl();
-        stageCleared = PlayerPrefs.GetInt("CStage", 7);
-        storyCleared = PlayerPrefs.GetInt("CStory", 7);
+        stageCleared = PlayerPrefs.GetInt("CStage", 0);
+        storyCleared = PlayerPrefs.GetInt("CStory", 0);
         score = PlayerPrefs.GetInt("Score", 0);
+    }
+    public void LoadToBlockChain()
+    {
+        for (int i = 6; i > 0; i--)
+        {
+            if (Web3singleton.Instance.hasBadge[i])
+            {
+                if(i + 1 > stageCleared)
+                {
+                    stageCleared = i + 1;
+                    storyCleared = i;
+                    SaveGame();
+                    break;
+                }
+            }
+        }
     }
 }

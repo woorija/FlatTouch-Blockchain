@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using ChainSafe.Gaming.Web3;
+using TMPro;
 
 public class badgeUIManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class badgeUIManager : MonoBehaviour
     [SerializeField] Image[] mintBadgeImages;
     [SerializeField] Button withdrawEtherButton;
     [SerializeField] Button realMintButton;
+    [SerializeField] TMP_Text walletAddress;
 
     [field: SerializeField] public Button connectButton { get; private set; }
     [field: SerializeField] public Button disconnectButton { get; private set; }
@@ -120,6 +122,7 @@ public class badgeUIManager : MonoBehaviour
         PlayerPrefs.DeleteKey("Address");
         connectButton.gameObject.SetActive(true);
         disconnectButton.gameObject.SetActive(false);
+        walletAddress.text = "";
         Init();
     }
     public void MintAllBadge()

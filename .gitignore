@@ -10,8 +10,10 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 /[Aa]ssets/Samples/
+/[Aa]ssets/walletconnect.json
 /[Aa]ssets/TextMesh Pro/Examples & Extras/
 /[Aa]ssets/WebGLTemplates/
+/[Uu]ser[Ss]ettings/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -24,6 +26,7 @@
 
 # Visual Studio cache directory
 .vs/
+/.vsconfig
 
 # Gradle cache directory
 .gradle/

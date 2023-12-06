@@ -23,6 +23,7 @@ using UnityEngine.Networking;
 using Microsoft.IdentityModel.Tokens;
 using ChainSafe.Gaming.Evm.Transactions;
 using Nethereum.Hex.HexTypes;
+using static ChainSafe.Gaming.UnityPackage.Model.GetNftModel.Response;
 
 public class Web3singleton : SingletonBehaviour<Web3singleton>
 {
@@ -58,9 +59,7 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
             .UseRpcProvider()
             .ConfigureRegisteredContracts(contracts =>
             {
-                var abi = "[\r\n    {\r\n      \"inputs\": [],\r\n      \"stateMutability\": \"nonpayable\",\r\n      \"type\": \"constructor\"\r\n    },\r\n    {\r\n      \"anonymous\": false,\r\n      \"inputs\": [\r\n        {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n          \"name\": \"account\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n          \"name\": \"operator\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"indexed\": false,\r\n          \"internalType\": \"bool\",\r\n          \"name\": \"approved\",\r\n          \"type\": \"bool\"\r\n        }\r\n      ],\r\n      \"name\": \"ApprovalForAll\",\r\n      \"type\": \"event\"\r\n    },\r\n    {\r\n      \"anonymous\": false,\r\n      \"inputs\": [\r\n        {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n          \"name\": \"operator\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n          \"name\": \"from\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n          \"name\": \"to\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"indexed\": false,\r\n          \"internalType\": \"uint256[]\",\r\n          \"name\": \"ids\",\r\n          \"type\": \"uint256[]\"\r\n        },\r\n        {\r\n          \"indexed\": false,\r\n          \"internalType\": \"uint256[]\",\r\n          \"name\": \"values\",\r\n          \"type\": \"uint256[]\"\r\n        }\r\n      ],\r\n      \"name\": \"TransferBatch\",\r\n      \"type\": \"event\"\r\n    },\r\n    {\r\n      \"anonymous\": false,\r\n      \"inputs\": [\r\n        {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n          \"name\": \"operator\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n          \"name\": \"from\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n          \"name\": \"to\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"indexed\": false,\r\n          \"internalType\": \"uint256\",\r\n          \"name\": \"id\",\r\n          \"type\": \"uint256\"\r\n        },\r\n        {\r\n          \"indexed\": false,\r\n          \"internalType\": \"uint256\",\r\n          \"name\": \"value\",\r\n          \"type\": \"uint256\"\r\n        }\r\n      ],\r\n      \"name\": \"TransferSingle\",\r\n      \"type\": \"event\"\r\n    },\r\n    {\r\n      \"anonymous\": false,\r\n      \"inputs\": [\r\n        {\r\n          \"indexed\": false,\r\n          \"internalType\": \"string\",\r\n          \"name\": \"value\",\r\n          \"type\": \"string\"\r\n        },\r\n        {\r\n          \"indexed\": true,\r\n          \"internalType\": \"uint256\",\r\n          \"name\": \"id\",\r\n          \"type\": \"uint256\"\r\n        }\r\n      ],\r\n      \"name\": \"URI\",\r\n      \"type\": \"event\"\r\n    },\r\n    {\r\n      \"stateMutability\": \"payable\",\r\n      \"type\": \"fallback\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\": \"string\",\r\n          \"name\": \"newuri\",\r\n          \"type\": \"string\"\r\n        }\r\n      ],\r\n      \"name\": \"ChangeURI\",\r\n      \"outputs\": [],\r\n      \"stateMutability\": \"nonpayable\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [],\r\n      \"name\": \"_price\",\r\n      \"outputs\": [\r\n        {\r\n          \"internalType\": \"uint256\",\r\n          \"name\": \"\",\r\n          \"type\": \"uint256\"\r\n        }\r\n      ],\r\n      \"stateMutability\": \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\": \"address\",\r\n          \"name\": \"account\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"internalType\": \"uint256\",\r\n          \"name\": \"id\",\r\n          \"type\": \"uint256\"\r\n        }\r\n      ],\r\n      \"name\": \"balanceOf\",\r\n      \"outputs\": [\r\n        {\r\n          \"internalType\": \"uint256\",\r\n          \"name\": \"\",\r\n          \"type\": \"uint256\"\r\n        }\r\n      ],\r\n      \"stateMutability\": \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\": \"address[]\",\r\n          \"name\": \"accounts\",\r\n          \"type\": \"address[]\"\r\n        },\r\n        {\r\n          \"internalType\": \"uint256[]\",\r\n          \"name\": \"ids\",\r\n          \"type\": \"uint256[]\"\r\n        }\r\n      ],\r\n      \"name\": \"balanceOfBatch\",\r\n      \"outputs\": [\r\n        {\r\n          \"internalType\": \"uint256[]\",\r\n          \"name\": \"\",\r\n          \"type\": \"uint256[]\"\r\n        }\r\n      ],\r\n      \"stateMutability\": \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\": \"address\",\r\n          \"name\": \"account\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"internalType\": \"address\",\r\n          \"name\": \"operator\",\r\n          \"type\": \"address\"\r\n        }\r\n      ],\r\n      \"name\": \"isApprovedForAll\",\r\n      \"outputs\": [\r\n        {\r\n          \"internalType\": \"bool\",\r\n          \"name\": \"\",\r\n          \"type\": \"bool\"\r\n        }\r\n      ],\r\n      \"stateMutability\": \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [],\r\n      \"name\": \"mintERC1155\",\r\n      \"outputs\": [],\r\n      \"stateMutability\": \"nonpayable\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [],\r\n      \"name\": \"owner\",\r\n      \"outputs\": [\r\n        {\r\n          \"internalType\": \"address\",\r\n          \"name\": \"\",\r\n          \"type\": \"address\"\r\n        }\r\n      ],\r\n      \"stateMutability\": \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\": \"address\",\r\n          \"name\": \"from\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"internalType\": \"address\",\r\n          \"name\": \"to\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"internalType\": \"uint256[]\",\r\n          \"name\": \"ids\",\r\n          \"type\": \"uint256[]\"\r\n        },\r\n        {\r\n          \"internalType\": \"uint256[]\",\r\n          \"name\": \"amounts\",\r\n          \"type\": \"uint256[]\"\r\n        },\r\n        {\r\n          \"internalType\": \"bytes\",\r\n          \"name\": \"data\",\r\n          \"type\": \"bytes\"\r\n        }\r\n      ],\r\n      \"name\": \"safeBatchTransferFrom\",\r\n      \"outputs\": [],\r\n      \"stateMutability\": \"nonpayable\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\": \"address\",\r\n          \"name\": \"from\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"internalType\": \"address\",\r\n          \"name\": \"to\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"internalType\": \"uint256\",\r\n          \"name\": \"id\",\r\n          \"type\": \"uint256\"\r\n        },\r\n        {\r\n          \"internalType\": \"uint256\",\r\n          \"name\": \"amount\",\r\n          \"type\": \"uint256\"\r\n        },\r\n        {\r\n          \"internalType\": \"bytes\",\r\n          \"name\": \"data\",\r\n          \"type\": \"bytes\"\r\n        }\r\n      ],\r\n      \"name\": \"safeTransferFrom\",\r\n      \"outputs\": [],\r\n      \"stateMutability\": \"nonpayable\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\": \"address\",\r\n          \"name\": \"operator\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n          \"internalType\": \"bool\",\r\n          \"name\": \"approved\",\r\n          \"type\": \"bool\"\r\n        }\r\n      ],\r\n      \"name\": \"setApprovalForAll\",\r\n      \"outputs\": [],\r\n      \"stateMutability\": \"nonpayable\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\": \"bytes4\",\r\n          \"name\": \"interfaceId\",\r\n          \"type\": \"bytes4\"\r\n        }\r\n      ],\r\n      \"name\": \"supportsInterface\",\r\n      \"outputs\": [\r\n        {\r\n          \"internalType\": \"bool\",\r\n          \"name\": \"\",\r\n          \"type\": \"bool\"\r\n        }\r\n      ],\r\n      \"stateMutability\": \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\": \"uint8\",\r\n          \"name\": \"num\",\r\n          \"type\": \"uint8\"\r\n        }\r\n      ],\r\n      \"name\": \"transferBadge\",\r\n      \"outputs\": [],\r\n      \"stateMutability\": \"payable\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\": \"uint256\",\r\n          \"name\": \"\",\r\n          \"type\": \"uint256\"\r\n        }\r\n      ],\r\n      \"name\": \"uri\",\r\n      \"outputs\": [\r\n        {\r\n          \"internalType\": \"string\",\r\n          \"name\": \"\",\r\n          \"type\": \"string\"\r\n        }\r\n      ],\r\n      \"stateMutability\": \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [],\r\n      \"name\": \"withdrawEther\",\r\n      \"outputs\": [],\r\n      \"stateMutability\": \"nonpayable\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"stateMutability\": \"payable\",\r\n      \"type\": \"receive\"\r\n    }\r\n  ]";
-                var address = "0x0c4f74549Ecf0564b01a6Ab9EcF43591bD12B731";
-                contracts.RegisterContract("ERC1155", abi, address);
+                contracts.RegisterContract("ERC1155", abi, contractAddress);
             });
     }
     public async Task GetERC1155URI()
@@ -85,17 +84,16 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
     }
     public async void BadgeCheck()
     {
-        await ProcessBalanceOfBatch();
+        await GetBalanceOfBatch();
     }
 
-    private async Task ProcessBalanceOfBatch()
+    private async Task GetBalanceOfBatch()
     {
-        var contract = "0x0c4f74549Ecf0564b01a6Ab9EcF43591bD12B731";
         var account = PlayerPrefs.GetString("Address");
         string[] accounts = { account, account, account, account, account, account, account };
         string[] tokenIds = { "1", "2", "3", "4", "5", "6", "7" };
 
-        List<BigInteger> batchBalances = await Erc1155.BalanceOfBatch(GlobalWeb3, contract, accounts, tokenIds);
+        List<BigInteger> batchBalances = await Erc1155.BalanceOfBatch(GlobalWeb3, contractAddress, accounts, tokenIds);
         for (int i = 0; i < batchBalances.Count; i++)
         {
             if (batchBalances[i] != 0)
@@ -112,14 +110,21 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
         {
             if (batchBalances[i] == 0)
             {
-                onUnlock(i);
+                onUnlock?.Invoke(i);
             }
             else
             {
-                onAlready(i);
+                onAlready?.Invoke(i);
             }
         }
+        GameManager.Instance.LoadToBlockChain();
         await SetBadgesImage();
+    }
+    private async Task<BigInteger> GetBalance(int _index)
+    {
+        var account = PlayerPrefs.GetString("Address");
+        BigInteger balance = await Erc1155.BalanceOf(GlobalWeb3, contractAddress, account, _index);
+        return balance;
     }
     public async Task SetBadgesImage()
     {
@@ -129,7 +134,7 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
             {
                 if (badgeUiSprites[i] != null)
                 {
-                    onSetImage(badgeUiSprites[i], i);
+                    onSetImage?.Invoke(badgeUiSprites[i], i);
                 }
                 else
                 {
@@ -140,9 +145,22 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
             }
         }
     }
-    public void SetBadgeImage()
+    public async void SetBadgeImage(int _index)
     {
-
+        while (true)
+        {
+            BigInteger balance = await GetBalance(_index);
+            Debug.Log(balance);
+            if(balance != 0 && badgeUiSprites[_index - 1] != null)
+            {
+                hasBadge[_index - 1] = true;
+                GameManager.Instance.LoadToBlockChain();
+                onSetImage?.Invoke(badgeUiSprites[_index - 1], _index - 1);
+                onAlready?.Invoke(_index - 1);
+                break;
+            }
+            await Task.Delay(5000);
+        }
     }
     public async void SendMintAllBadge()
     {
@@ -161,6 +179,7 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
     }
     public async void SendTransferBadge(int _index)
     {
+        SetBadgeImage(_index);
         var transactionRequest = new TransactionRequest { Value = new HexBigInteger(10000000000000000) }; // 0.01eth
         await erc1155Contract.Send("transferBadge", new object[] { _index }, transactionRequest);
     }
@@ -181,10 +200,13 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
         string _uri = uri + tokenId + ".json";
         // fetch json from uri
         UnityWebRequest webRequest = UnityWebRequest.Get(_uri);
-        await webRequest.SendWebRequest();
-        if (webRequest.result != UnityWebRequest.Result.Success)
+        while (true)
         {
-            throw new System.Exception(webRequest.error);
+            await webRequest.SendWebRequest();
+            if (webRequest.result == UnityWebRequest.Result.Success)
+            {
+                break;
+            }
         }
         // Deserialize the data into the response class
         Response data =
@@ -199,7 +221,14 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
         Debug.Log("Revised URI: " + imageUri);
         // fetch image and display in game
         UnityWebRequest textureRequest = UnityWebRequestTexture.GetTexture(imageUri);
-        await textureRequest.SendWebRequest();
+        while (true)
+        {
+            await textureRequest.SendWebRequest();
+            if(textureRequest.result == UnityWebRequest.Result.Success)
+            {
+                break;
+            }
+        }
         var response = ((DownloadHandlerTexture)textureRequest.downloadHandler).texture;
         return response;
     }
