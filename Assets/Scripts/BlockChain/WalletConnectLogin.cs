@@ -28,8 +28,8 @@ using WalletConnectSharp.Sign.Models.Engine.Methods;
 public class WalletConnectLogin : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] public Button loginButton;
-    [SerializeField] GameObject DisconnectButton;
+    [SerializeField] Button loginButton;
+    [SerializeField] Button DisconnectButton;
     [SerializeField] GameObject UITouchLock;
     [SerializeField] TMP_Text walletAddress;
 
@@ -79,14 +79,26 @@ public class WalletConnectLogin : MonoBehaviour
 #endif
         yield return FetchSupportedWallets();
         loginButton.onClick.AddListener(LoginClicked);
+        DisconnectButton.onClick.AddListener(DisconnectClicked);
         string address = PlayerPrefs.GetString("Address", "");
         walletAddress.text = address;
     }
+
+    
 
     private async void LoginClicked()
     {
         UITouchLock.SetActive(true);
         await TryLogin();
+    }
+
+    private async void DisconnectClicked()
+    {
+        UITouchLock.SetActive(true);
+        PlayerData.Clear();
+        await Web3singleton.Instance.GlobalWeb3.TerminateAsync();
+        Web3singleton.Instance.GlobalWeb3 = null;
+        UITouchLock.SetActive(false);
     }
 
     protected async Task TryLogin()
@@ -105,6 +117,7 @@ public class WalletConnectLogin : MonoBehaviour
         catch (Exception)
         {
             Debug.Log("Login failed, please try again\n(see console for more details)");
+            UITouchLock.SetActive(false);
             throw;
         }
 
@@ -114,7 +127,7 @@ public class WalletConnectLogin : MonoBehaviour
         PlayerPrefs.SetString("Address", address);
         walletAddress.text = address;
         loginButton.gameObject.SetActive(false);
-        DisconnectButton.SetActive(true);
+        DisconnectButton.gameObject.SetActive(true);
         Web3singleton.Instance.onIsOwner.Invoke();
         Web3singleton.Instance.GetBadgeSprites();
         Web3singleton.Instance.BadgeCheck();

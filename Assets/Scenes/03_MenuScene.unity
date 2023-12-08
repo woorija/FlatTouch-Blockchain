@@ -8508,7 +8508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loginButton: {fileID: 1465740941}
-  DisconnectButton: {fileID: 333408656}
+  DisconnectButton: {fileID: 333408658}
   UITouchLock: {fileID: 891057683}
   walletAddress: {fileID: 738851162}
   projectId: put your wallet connect project id
