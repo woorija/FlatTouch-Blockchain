@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameManager : SingletonBehaviour<GameManager>
 {
     float audioVolume = 1f; //볼륨세팅
-    public int stageCleared { get; private set; } = 7;
-    public int storyCleared { get; private set; } = 7;
+    public int stageCleared { get; private set; } = 5;
+    public int storyCleared { get; private set; } = 4;
     public int score { get; private set; } = 0;
     public int currentStageSroce { get; private set; } = 0;
     public int currentStage { get; private set; } = 0; // 스테이지씬의 리소스 적용을 위한 현스테이지상태 변수
@@ -99,8 +99,8 @@ public class GameManager : SingletonBehaviour<GameManager>
         }
         audioVolume = PlayerPrefs.GetFloat("Volume", 0.3f);
         AudioManager.Instance.VolumeControl();
-        stageCleared = PlayerPrefs.GetInt("CStage", 0);
-        storyCleared = PlayerPrefs.GetInt("CStory", 0);
+        stageCleared = PlayerPrefs.GetInt("CStage", 5);
+        storyCleared = PlayerPrefs.GetInt("CStory", 4);
         score = PlayerPrefs.GetInt("Score", 0);
     }
     public void LoadToBlockChain()

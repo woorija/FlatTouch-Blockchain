@@ -81,7 +81,14 @@ public class WalletConnectLogin : MonoBehaviour
         loginButton.onClick.AddListener(LoginClicked);
         DisconnectButton.onClick.AddListener(DisconnectClicked);
         string address = PlayerPrefs.GetString("Address", "");
-        walletAddress.text = address;
+        if (address.Equals("")) 
+        {
+            walletAddress.text = string.Empty;
+        }
+        else
+        {
+            walletAddress.text = $"{address.Substring(0, 6)}...{address.Substring(address.Length - 4)}";
+        }
     }
 
     
@@ -125,7 +132,7 @@ public class WalletConnectLogin : MonoBehaviour
 
         var address = await Web3singleton.Instance.GlobalWeb3.Signer.GetAddress();
         PlayerPrefs.SetString("Address", address);
-        walletAddress.text = address;
+        walletAddress.text = $"{address.Substring(0, 6)}...{address.Substring(address.Length - 4)}";
         loginButton.gameObject.SetActive(false);
         DisconnectButton.gameObject.SetActive(true);
         Web3singleton.Instance.onIsOwner.Invoke();

@@ -101,6 +101,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 582b4779b8ce8a749a29fe7aa3872267, type: 3}
   - {fileID: 21300000, guid: 018493b9e6c3387489cacd95b8862f41, type: 3}
   - {fileID: -1554932897, guid: 9aaa8f2a57097294a9e54a89cb0d6ddc, type: 3}
+  - {fileID: 21300000, guid: 8610994ab8c8e20418c8c280939f88ff, type: 3}
   - {fileID: 552889849, guid: 20bc655a1a3484f409dd844f9261f8fc, type: 3}
   - {fileID: -1435560702, guid: 20bc655a1a3484f409dd844f9261f8fc, type: 3}
   - {fileID: 21300000, guid: 093d407a267c57244a881e1fd342c152, type: 3}
@@ -161,10 +162,11 @@ SpriteAtlas:
   - EndUI
   - MagicWand
   - dicision_0
+  - erc1155-Loading
   - wordbubbles_1
   - wordbubbles_0
   - One_Pattern
-  - 833
+  - LoadingIndicator
   - game over_replay_0
   - timerbar_0
   - Bookmark7_0
