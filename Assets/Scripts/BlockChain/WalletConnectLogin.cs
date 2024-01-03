@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ChainSafe.Gaming.Evm.Providers;
 using ChainSafe.Gaming.Unity;
 using ChainSafe.Gaming.UnityPackage;
 using ChainSafe.Gaming.WalletConnect;
@@ -32,6 +33,7 @@ public class WalletConnectLogin : MonoBehaviour
     [SerializeField] Button DisconnectButton;
     [SerializeField] GameObject UITouchLock;
     [SerializeField] TMP_Text walletAddress;
+    [SerializeField] TMP_Text etherBalance;
 
     [Header("Wallet Connect")]
     [SerializeField]
@@ -60,12 +62,12 @@ public class WalletConnectLogin : MonoBehaviour
             walletConnectConfig.OnSessionApproved -= SessionApproved;
         }
     }
-    private IEnumerator Start()
+    private void Start()
     {
-        yield return Initialize();
+        Initialize();
     }
 
-    protected IEnumerator Initialize()
+    protected async void Initialize()
     {
 
 #if UNITY_ANDROID
@@ -77,21 +79,27 @@ public class WalletConnectLogin : MonoBehaviour
         }
 
 #endif
-        yield return FetchSupportedWallets();
+        await FetchSupportedWallets();
         loginButton.onClick.AddListener(LoginClicked);
         DisconnectButton.onClick.AddListener(DisconnectClicked);
         string address = PlayerPrefs.GetString("Address", "");
-        if (address.Equals("")) 
+        if (address.Equals(""))
         {
             walletAddress.text = string.Empty;
         }
         else
         {
             walletAddress.text = $"{address.Substring(0, 6)}...{address.Substring(address.Length - 4)}";
+            await GetBalance();
         }
     }
 
-    
+    private async Task GetBalance()
+    {
+        string address = PlayerPrefs.GetString("Address", "");
+        var hexBalance = await Web3singleton.Instance.GlobalWeb3.RpcProvider.GetBalance(address);
+        etherBalance.text = $"Ether: {hexBalance.Value}";
+    }
 
     private async void LoginClicked()
     {
@@ -133,6 +141,7 @@ public class WalletConnectLogin : MonoBehaviour
         var address = await Web3singleton.Instance.GlobalWeb3.Signer.GetAddress();
         PlayerPrefs.SetString("Address", address);
         walletAddress.text = $"{address.Substring(0, 6)}...{address.Substring(address.Length - 4)}";
+        await GetBalance();
         loginButton.gameObject.SetActive(false);
         DisconnectButton.gameObject.SetActive(true);
         Web3singleton.Instance.onIsOwner.Invoke();
@@ -225,20 +234,18 @@ public class WalletConnectLogin : MonoBehaviour
 
         Debug.Log($"{session.Topic} Approved");
     }
-    private IEnumerator FetchSupportedWallets()
+    private async Task FetchSupportedWallets()
     {
         using (UnityWebRequest webRequest = UnityWebRequest.Get("https://registry.walletconnect.org/data/wallets.json"))
         {
             // Request and wait for the desired page.
-            yield return webRequest.SendWebRequest();
+            await webRequest.SendWebRequest();
 
             if (webRequest.result != UnityWebRequest.Result.Success)
             {
                 Debug.LogError("Error Getting Supported Wallets: " + webRequest.error);
-
-                yield return null;
+                return;
             }
-
             else
             {
                 var json = webRequest.downloadHandler.text;

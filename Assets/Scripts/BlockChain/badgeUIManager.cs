@@ -20,6 +20,7 @@ public class badgeUIManager : MonoBehaviour
     [SerializeField] Button withdrawEtherButton;
     [SerializeField] Button realMintButton;
     [SerializeField] TMP_Text walletAddress;
+    [SerializeField] TMP_Text etherBalance;
 
     [field: SerializeField] public Button connectButton { get; private set; }
     [field: SerializeField] public Button disconnectButton { get; private set; }
@@ -128,6 +129,7 @@ public class badgeUIManager : MonoBehaviour
         connectButton.gameObject.SetActive(true);
         disconnectButton.gameObject.SetActive(false);
         walletAddress.text = "";
+        etherBalance.text = "";
         Init();
     }
     public void MintAllBadge()
