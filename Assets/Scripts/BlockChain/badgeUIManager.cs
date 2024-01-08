@@ -11,7 +11,7 @@ public class badgeUIManager : MonoBehaviour
 {
     [SerializeField] Sprite lockSprite;
     [SerializeField] Sprite unlockSprite;
-    [SerializeField] Sprite lodingSprite;
+    [SerializeField] Sprite loadingSprite;
 
     [SerializeField] RectTransform UIMain;
     [SerializeField] Button[] mintButtons;
@@ -104,6 +104,7 @@ public class badgeUIManager : MonoBehaviour
     {
         mintButtons[_index].gameObject.SetActive(false);
         mintBadgeLoadingIndicators[_index].gameObject.SetActive(true);
+        mintBadgeImages[_index].sprite = loadingSprite;
     }
 
     public void Init()
@@ -117,6 +118,8 @@ public class badgeUIManager : MonoBehaviour
         disconnectButton.gameObject.SetActive(false);
         withdrawEtherButton.gameObject.SetActive(false);
         realMintButton.gameObject.SetActive(false);
+        walletAddress.text = "";
+        etherBalance.text = "";
     }
     public void BadgeImageSetting(Sprite _sprite, int _index)
     {

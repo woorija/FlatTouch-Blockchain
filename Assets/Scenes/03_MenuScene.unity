@@ -5369,7 +5369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockSprite: {fileID: 21300000, guid: 9baedc91bed6e8a4babc15576960b8d3, type: 3}
   unlockSprite: {fileID: 21300000, guid: 299a39a0c77989a419a3c4e9bca1db07, type: 3}
-  lodingSprite: {fileID: 21300000, guid: 8610994ab8c8e20418c8c280939f88ff, type: 3}
+  loadingSprite: {fileID: 21300000, guid: 8610994ab8c8e20418c8c280939f88ff, type: 3}
   UIMain: {fileID: 2114751711}
   mintButtons:
   - {fileID: 2086129869}

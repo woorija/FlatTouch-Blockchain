@@ -24,6 +24,7 @@ using Microsoft.IdentityModel.Tokens;
 using ChainSafe.Gaming.Evm.Transactions;
 using Nethereum.Hex.HexTypes;
 using static ChainSafe.Gaming.UnityPackage.Model.GetNftModel.Response;
+using Nethereum.RPC.Eth;
 
 public class Web3singleton : SingletonBehaviour<Web3singleton>
 {
@@ -41,6 +42,7 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
 
     public Action onMintERC1155;
     public Action onIsOwner;
+    public Action onEtherBalance;
     public Action<int> onLock;
     public Action<int> onUnlock;
     public Action<int> onAlready;
@@ -61,6 +63,15 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
             {
                 contracts.RegisterContract("ERC1155", abi, contractAddress);
             });
+    }
+    public async Task<string> GetBalance()
+    {
+        string address = PlayerPrefs.GetString("Address", "");
+        var hexBalance = await GlobalWeb3.RpcProvider.GetBalance(address);
+        string balance = hexBalance.Value.ToString();
+        balance = balance.Substring(0, balance.Length - 14);
+        string eth = $"Ether: {balance.Substring(0, 2)}.{balance.Substring(2)}";
+        return eth;
     }
     public async Task GetERC1155URI()
     {
@@ -99,6 +110,7 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
             if (batchBalances[i] != 0)
             {
                 hasBadge[i] = true;
+                onAlready?.Invoke(i);
             }
             else
             {
@@ -111,10 +123,6 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
             if (batchBalances[i] == 0)
             {
                 onUnlock?.Invoke(i);
-            }
-            else
-            {
-                onAlready?.Invoke(i);
             }
         }
         GameManager.Instance.LoadToBlockChain();

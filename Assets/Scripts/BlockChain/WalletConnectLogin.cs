@@ -90,15 +90,8 @@ public class WalletConnectLogin : MonoBehaviour
         else
         {
             walletAddress.text = $"{address.Substring(0, 6)}...{address.Substring(address.Length - 4)}";
-            await GetBalance();
+            etherBalance.text =  await Web3singleton.Instance.GetBalance();
         }
-    }
-
-    private async Task GetBalance()
-    {
-        string address = PlayerPrefs.GetString("Address", "");
-        var hexBalance = await Web3singleton.Instance.GlobalWeb3.RpcProvider.GetBalance(address);
-        etherBalance.text = $"Ether: {hexBalance.Value}";
     }
 
     private async void LoginClicked()
@@ -141,7 +134,7 @@ public class WalletConnectLogin : MonoBehaviour
         var address = await Web3singleton.Instance.GlobalWeb3.Signer.GetAddress();
         PlayerPrefs.SetString("Address", address);
         walletAddress.text = $"{address.Substring(0, 6)}...{address.Substring(address.Length - 4)}";
-        await GetBalance();
+        etherBalance.text = await Web3singleton.Instance.GetBalance();
         loginButton.gameObject.SetActive(false);
         DisconnectButton.gameObject.SetActive(true);
         Web3singleton.Instance.onIsOwner.Invoke();
