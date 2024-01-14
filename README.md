@@ -2,8 +2,9 @@
 
 ## 프로젝트 소개
 <img src = "https://github.com/woorija/FlatTouch-Blockchain/assets/77769870/02ee6fcb-a72c-4d11-a025-e79c502e2408" width="30%" height="30%"></img>
-<img src = "https://github.com/woorija/FlatTouch-Blockchain/assets/77769870/69e7958b-8a7b-4264-8754-4a95ed68cd5b" width="30%" height="30%"></img>
+<img src = "https://github.com/woorija/FlatTouch-Blockchain/assets/77769870/97cb6f89-46d3-4334-930f-2c0a4e0b3749" width="30%" height="30%"></img>
  - 작품명: **Flat Touch with BlockChain**
+
  - 플랫폼: Windows
  - 개발 기간: 2023.11.04~2023.12.08
  - 개발 환경: Unity 2021.3.19f1 (urp)
@@ -31,8 +32,10 @@
    git clone https://github.com/woorija/FlatTouch-Blockchain.git
    ```
 4. 아래 정보를 입력한다.
-   - WalletConnect에 Project ID 입력하기</br>![캡처_2023_12_12_18_32_46_944](https://github.com/woorija/FlatTouch-Blockchain/assets/77769870/3d5a551a-00df-4199-914f-b9b18e68bbe1)
-   - ChainSafeServerSettings에 Project ID와 RPC 입력하기</br>![캡처_2023_12_12_18_33_18_996](https://github.com/woorija/FlatTouch-Blockchain/assets/77769870/ff0d6ec4-9312-440d-8617-fb542d2e4726)
+   - WalletConnect에 Project ID 입력하기</br>![캡처_2023_12_12_18_32_46_944](https://github.com/woorija/FlatTouch-Blockchain/assets/77769870/16f032cb-1f5e-4de9-aec9-d5953f243ba8)
+
+   - ChainSafeServerSettings에 Project ID와 RPC 입력하기</br>![캡처_2023_12_12_18_33_18_996](https://github.com/woorija/FlatTouch-Blockchain/assets/77769870/ac5dd062-dc43-46a5-95c8-aca00f349f45)
+
 5. Unity에서 프로젝트 실행 후 빌드한다.
 
 ### 주의 사항
