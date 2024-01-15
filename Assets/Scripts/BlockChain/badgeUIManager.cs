@@ -46,6 +46,7 @@ public class badgeUIManager : MonoBehaviour
         Web3singleton.Instance.onLock += MintLock;
         Web3singleton.Instance.onAlready += AlreadyMint;
         Web3singleton.Instance.onSetImage += BadgeImageSetting;
+        Web3singleton.Instance.onEtherBalance += SetEtherBalanceText;
         for(int i=0;i<mintButtons.Length;i++)
         {
             int index = i + 1;
@@ -61,6 +62,7 @@ public class badgeUIManager : MonoBehaviour
         Web3singleton.Instance.onLock -= MintLock;
         Web3singleton.Instance.onAlready -= AlreadyMint;
         Web3singleton.Instance.onSetImage -= BadgeImageSetting;
+        Web3singleton.Instance.onEtherBalance -= SetEtherBalanceText;
     }
     public void IsOwner()
     {
@@ -167,5 +169,9 @@ public class badgeUIManager : MonoBehaviour
         mintButtons[_index].onClick.RemoveAllListeners();
         await Task.Delay(10000);
         mintButtons[_index].onClick.AddListener(() => TransferBadge(_index + 1));
+    }
+    public void SetEtherBalanceText(string _text)
+    {
+        etherBalance.text = _text;
     }
 }

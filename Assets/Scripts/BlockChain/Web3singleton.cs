@@ -25,6 +25,7 @@ using ChainSafe.Gaming.Evm.Transactions;
 using Nethereum.Hex.HexTypes;
 using static ChainSafe.Gaming.UnityPackage.Model.GetNftModel.Response;
 using Nethereum.RPC.Eth;
+using UnityEngine.UIElements;
 
 public class Web3singleton : SingletonBehaviour<Web3singleton>
 {
@@ -42,7 +43,7 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
 
     public Action onMintERC1155;
     public Action onIsOwner;
-    public Action onEtherBalance;
+    public Action<string> onEtherBalance;
     public Action<int> onLock;
     public Action<int> onUnlock;
     public Action<int> onAlready;
@@ -69,8 +70,34 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
         string address = PlayerPrefs.GetString("Address", "");
         var hexBalance = await GlobalWeb3.RpcProvider.GetBalance(address);
         string balance = hexBalance.Value.ToString();
-        balance = balance.Substring(0, balance.Length - 14);
-        string eth = $"Ether: {balance.Substring(0, 2)}.{balance.Substring(2)}";
+        int digitCount = balance.Length;
+        string eth;
+
+        if (digitCount < 14)
+        {
+            eth = "0";
+        }
+        else if(digitCount == 15)
+        {
+            eth = $"0.000{balance.Substring(0, 1)}";
+        }
+        else if (digitCount == 16)
+        {
+            eth = $"0.00{balance.Substring(0, 2)}";
+        }
+        else if (digitCount == 17)
+        {
+            eth = $"0.0{balance.Substring(0, 3)}";
+        }
+        else if (digitCount == 18)
+        {
+            eth = $"0.{balance.Substring(0, 4)}";
+        }
+        else
+        {
+            int decimalIndex = digitCount - 18;
+            eth = $"{balance.Substring(0, decimalIndex)}.{balance.Substring(decimalIndex, decimalIndex + 4)}";
+        }
         return eth;
     }
     public async Task GetERC1155URI()
@@ -165,6 +192,8 @@ public class Web3singleton : SingletonBehaviour<Web3singleton>
                 GameManager.Instance.LoadToBlockChain();
                 onSetImage?.Invoke(badgeUiSprites[_index - 1], _index - 1);
                 onAlready?.Invoke(_index - 1);
+                string etherBalance = await GetBalance();
+                onEtherBalance.Invoke(etherBalance);
                 break;
             }
             await Task.Delay(5000);
