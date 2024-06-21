@@ -103,20 +103,13 @@ public class GameManager : SingletonBehaviour<GameManager>
         storyCleared = PlayerPrefs.GetInt("CStory", 4);
         score = PlayerPrefs.GetInt("Score", 0);
     }
-    public void LoadToBlockChain()
+    public void LoadToBlockChain(int _count)
     {
-        for (int i = 6; i > 0; i--)
+        if(_count > stageCleared)
         {
-            if (Web3singleton.Instance.hasBadge[i])
-            {
-                if(i + 1 > stageCleared)
-                {
-                    stageCleared = i + 1;
-                    storyCleared = i;
-                    SaveGame();
-                    break;
-                }
-            }
+            stageCleared = _count;
+            storyCleared = _count - 1;
+            SaveGame();
         }
     }
 }

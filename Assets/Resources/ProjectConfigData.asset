@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e300208fa3ee04a99d031a99308441, type: 3}
   m_Name: ProjectConfigData
   m_EditorClassIdentifier: 
-  projectID: put your project id
+  projectID: 100e95a6-b763-46b1-8730-42158d0f1acf
   chainID: 11155111
   chain: sepolia
   network: ethereum
   symbol: Eth
-  rpc: put your rpc
+  rpc: https://nd-400-901-668.p2pify.com/e72814948798f6644fa1e51963fadfbd

@@ -262,7 +262,6 @@ RectTransform:
   - {fileID: 1159043671}
   - {fileID: 2077220104}
   - {fileID: 891057684}
-  - {fileID: 888138685}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -758,9 +757,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467223054}
-        m_TargetAssemblyTypeName: Web3singleton, Assembly-CSharp
-        m_MethodName: MintAllBadge
+      - m_Target: {fileID: 248569122}
+        m_TargetAssemblyTypeName: Web3Manager, Assembly-CSharp
+        m_MethodName: SendMintAllBadge
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -807,84 +806,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98587829}
-  m_CullTransparentMesh: 1
---- !u!1 &164306166
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 164306167}
-  - component: {fileID: 164306169}
-  - component: {fileID: 164306168}
-  m_Layer: 5
-  m_Name: Backdrop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &164306167
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164306166}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1796824509}
-  - {fileID: 1797123753}
-  m_Father: {fileID: 2011890724}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -40}
-  m_SizeDelta: {x: 994, y: 1468.8}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &164306168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164306166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a2919c8cf64aadc4699c3b88a2496d55, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &164306169
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164306166}
   m_CullTransparentMesh: 1
 --- !u!1 &178173424
 GameObject:
@@ -1122,7 +1043,66 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 227052607}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 248569122}
+        m_TargetAssemblyTypeName: Web3Manager, Assembly-CSharp
+        m_MethodName: SendTransferBadge
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &248569121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 248569123}
+  - component: {fileID: 248569122}
+  m_Layer: 0
+  m_Name: Web3Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &248569122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248569121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff5f0cd66bad604a8bf22bd56b681bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  badgeUI: {fileID: 2077220105}
+  tempImage: {fileID: 1875503233}
+--- !u!4 &248569123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248569121}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1875503235}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &249565894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,7 +1509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1560,9 +1540,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1051613512}
-        m_TargetAssemblyTypeName: badgeUIManager, Assembly-CSharp
-        m_MethodName: Disconnect
+      - m_Target: {fileID: 248569122}
+        m_TargetAssemblyTypeName: Web3Manager, Assembly-CSharp
+        m_MethodName: OnDisconnect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2732,8 +2712,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1051613512}
-        m_TargetAssemblyTypeName: badgeUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2077220105}
+        m_TargetAssemblyTypeName: BadgeUI, Assembly-CSharp
         m_MethodName: UIOpen
         m_Mode: 1
         m_Arguments:
@@ -3623,8 +3603,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1051613512}
-        m_TargetAssemblyTypeName: badgeUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2077220105}
+        m_TargetAssemblyTypeName: BadgeUI, Assembly-CSharp
         m_MethodName: UIClose
         m_Mode: 1
         m_Arguments:
@@ -4511,79 +4491,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813503954}
   m_CullTransparentMesh: 1
---- !u!1 &817324312
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 817324313}
-  - component: {fileID: 817324315}
-  - component: {fileID: 817324314}
-  m_Layer: 5
-  m_Name: RawImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &817324313
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817324312}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1467223055}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &817324314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817324312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 0}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &817324315
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817324312}
-  m_CullTransparentMesh: 1
 --- !u!1 &822511632
 GameObject:
   m_ObjectHideFlags: 0
@@ -4742,60 +4649,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847262837}
   m_CullTransparentMesh: 1
---- !u!1 &888138684
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 888138685}
-  - component: {fileID: 888138686}
-  m_Layer: 5
-  m_Name: WalletConnectModal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &888138685
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888138684}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -90}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2011890724}
-  m_Father: {fileID: 36282280}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 1920}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &888138686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888138684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afcb9c9b754c354e8afa4bc943bf10b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _qrCodeImage: {fileID: 1109892909}
-  _backButton: {fileID: 1797123754}
-  _container: {fileID: 2011890724}
-  UITouchLock: {fileID: 891057683}
 --- !u!1 &891057683
 GameObject:
   m_ObjectHideFlags: 0
@@ -5338,84 +5191,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011619849}
   m_CullTransparentMesh: 1
---- !u!1 &1051613511
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1051613513}
-  - component: {fileID: 1051613512}
-  m_Layer: 0
-  m_Name: BlockchainUIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1051613512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051613511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7e7f376b3c8a334f8d749cb9ec63333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lockSprite: {fileID: 21300000, guid: 9baedc91bed6e8a4babc15576960b8d3, type: 3}
-  unlockSprite: {fileID: 21300000, guid: 299a39a0c77989a419a3c4e9bca1db07, type: 3}
-  loadingSprite: {fileID: 21300000, guid: 8610994ab8c8e20418c8c280939f88ff, type: 3}
-  UIMain: {fileID: 2114751711}
-  mintButtons:
-  - {fileID: 2086129869}
-  - {fileID: 1452885111}
-  - {fileID: 227052609}
-  - {fileID: 2139939252}
-  - {fileID: 1853370235}
-  - {fileID: 2084389199}
-  - {fileID: 1595508624}
-  mintBadgeImages:
-  - {fileID: 1626454510}
-  - {fileID: 532272123}
-  - {fileID: 361856351}
-  - {fileID: 1344301731}
-  - {fileID: 2019101932}
-  - {fileID: 1871420585}
-  - {fileID: 419234405}
-  mintBadgeLoadingIndicators:
-  - {fileID: 712974513}
-  - {fileID: 717951080}
-  - {fileID: 1011619852}
-  - {fileID: 1670832189}
-  - {fileID: 1157142934}
-  - {fileID: 614881006}
-  - {fileID: 478704051}
-  withdrawEtherButton: {fileID: 2000825343}
-  realMintButton: {fileID: 98587831}
-  walletAddress: {fileID: 738851162}
-  etherBalance: {fileID: 2111596745}
-  <connectButton>k__BackingField: {fileID: 1465740941}
-  <disconnectButton>k__BackingField: {fileID: 333408658}
---- !u!4 &1051613513
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051613511}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: -40, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1055405860
 GameObject:
   m_ObjectHideFlags: 0
@@ -5702,82 +5477,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081763841}
-  m_CullTransparentMesh: 1
---- !u!1 &1109892907
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1109892908}
-  - component: {fileID: 1109892910}
-  - component: {fileID: 1109892909}
-  m_Layer: 5
-  m_Name: QrCodeImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1109892908
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109892907}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1796824509}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27, y: 14}
-  m_SizeDelta: {x: 512, y: 512}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1109892909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109892907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1109892910
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109892907}
   m_CullTransparentMesh: 1
 --- !u!1 &1157142931
 GameObject:
@@ -7443,7 +7142,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1452885109}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 248569122}
+        m_TargetAssemblyTypeName: Web3Manager, Assembly-CSharp
+        m_MethodName: SendTransferBadge
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1453806627
 GameObject:
   m_ObjectHideFlags: 0
@@ -7533,7 +7244,7 @@ GameObject:
   - component: {fileID: 1465740942}
   - component: {fileID: 1465740941}
   m_Layer: 5
-  m_Name: LoginButton
+  m_Name: ConnectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7573,7 +7284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -7603,7 +7314,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1465740942}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 248569122}
+        m_TargetAssemblyTypeName: Web3Manager, Assembly-CSharp
+        m_MethodName: OnConnect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1465740942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7642,182 +7365,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465740939}
   m_CullTransparentMesh: 1
---- !u!1 &1467223053
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1467223055}
-  - component: {fileID: 1467223054}
-  m_Layer: 0
-  m_Name: blockchainSingleton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1467223054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467223053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9db7511e5eceb8c4db1fa6afd75395e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  errorPopup: {fileID: 0}
-  badgeUiSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  rawImage: {fileID: 817324314}
-  contractAddress: 0x0c4f74549Ecf0564b01a6Ab9EcF43591bD12B731
-  abi: "[\r\n    {\r\n      \"inputs\": [],\r\n      \"stateMutability\": \"nonpayable\",\r\n     
-    \"type\": \"constructor\"\r\n    },\r\n    {\r\n      \"anonymous\": false,\r\n     
-    \"inputs\": [\r\n        {\r\n          \"indexed\": true,\r\n          \"internalType\":
-    \"address\",\r\n          \"name\": \"account\",\r\n          \"type\": \"address\"\r\n       
-    },\r\n        {\r\n          \"indexed\": true,\r\n          \"internalType\":
-    \"address\",\r\n          \"name\": \"operator\",\r\n          \"type\": \"address\"\r\n       
-    },\r\n        {\r\n          \"indexed\": false,\r\n          \"internalType\":
-    \"bool\",\r\n          \"name\": \"approved\",\r\n          \"type\": \"bool\"\r\n       
-    }\r\n      ],\r\n      \"name\": \"ApprovalForAll\",\r\n      \"type\": \"event\"\r\n   
-    },\r\n    {\r\n      \"anonymous\": false,\r\n      \"inputs\": [\r\n       
-    {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n         
-    \"name\": \"operator\",\r\n          \"type\": \"address\"\r\n        },\r\n       
-    {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n         
-    \"name\": \"from\",\r\n          \"type\": \"address\"\r\n        },\r\n       
-    {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n         
-    \"name\": \"to\",\r\n          \"type\": \"address\"\r\n        },\r\n       
-    {\r\n          \"indexed\": false,\r\n          \"internalType\": \"uint256[]\",\r\n         
-    \"name\": \"ids\",\r\n          \"type\": \"uint256[]\"\r\n        },\r\n       
-    {\r\n          \"indexed\": false,\r\n          \"internalType\": \"uint256[]\",\r\n         
-    \"name\": \"values\",\r\n          \"type\": \"uint256[]\"\r\n        }\r\n     
-    ],\r\n      \"name\": \"TransferBatch\",\r\n      \"type\": \"event\"\r\n   
-    },\r\n    {\r\n      \"anonymous\": false,\r\n      \"inputs\": [\r\n       
-    {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n         
-    \"name\": \"operator\",\r\n          \"type\": \"address\"\r\n        },\r\n       
-    {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n         
-    \"name\": \"from\",\r\n          \"type\": \"address\"\r\n        },\r\n       
-    {\r\n          \"indexed\": true,\r\n          \"internalType\": \"address\",\r\n         
-    \"name\": \"to\",\r\n          \"type\": \"address\"\r\n        },\r\n       
-    {\r\n          \"indexed\": false,\r\n          \"internalType\": \"uint256\",\r\n         
-    \"name\": \"id\",\r\n          \"type\": \"uint256\"\r\n        },\r\n       
-    {\r\n          \"indexed\": false,\r\n          \"internalType\": \"uint256\",\r\n         
-    \"name\": \"value\",\r\n          \"type\": \"uint256\"\r\n        }\r\n     
-    ],\r\n      \"name\": \"TransferSingle\",\r\n      \"type\": \"event\"\r\n   
-    },\r\n    {\r\n      \"anonymous\": false,\r\n      \"inputs\": [\r\n       
-    {\r\n          \"indexed\": false,\r\n          \"internalType\": \"string\",\r\n         
-    \"name\": \"value\",\r\n          \"type\": \"string\"\r\n        },\r\n       
-    {\r\n          \"indexed\": true,\r\n          \"internalType\": \"uint256\",\r\n         
-    \"name\": \"id\",\r\n          \"type\": \"uint256\"\r\n        }\r\n      ],\r\n     
-    \"name\": \"URI\",\r\n      \"type\": \"event\"\r\n    },\r\n    {\r\n      \"stateMutability\":
-    \"payable\",\r\n      \"type\": \"fallback\"\r\n    },\r\n    {\r\n      \"inputs\":
-    [\r\n        {\r\n          \"internalType\": \"string\",\r\n          \"name\":
-    \"newuri\",\r\n          \"type\": \"string\"\r\n        }\r\n      ],\r\n     
-    \"name\": \"ChangeURI\",\r\n      \"outputs\": [],\r\n      \"stateMutability\":
-    \"nonpayable\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\":
-    [],\r\n      \"name\": \"_price\",\r\n      \"outputs\": [\r\n        {\r\n         
-    \"internalType\": \"uint256\",\r\n          \"name\": \"\",\r\n          \"type\":
-    \"uint256\"\r\n        }\r\n      ],\r\n      \"stateMutability\": \"view\",\r\n     
-    \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n         
-    \"internalType\": \"address\",\r\n          \"name\": \"account\",\r\n         
-    \"type\": \"address\"\r\n        },\r\n        {\r\n          \"internalType\":
-    \"uint256\",\r\n          \"name\": \"id\",\r\n          \"type\": \"uint256\"\r\n       
-    }\r\n      ],\r\n      \"name\": \"balanceOf\",\r\n      \"outputs\": [\r\n       
-    {\r\n          \"internalType\": \"uint256\",\r\n          \"name\": \"\",\r\n         
-    \"type\": \"uint256\"\r\n        }\r\n      ],\r\n      \"stateMutability\":
-    \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\":
-    [\r\n        {\r\n          \"internalType\": \"address[]\",\r\n          \"name\":
-    \"accounts\",\r\n          \"type\": \"address[]\"\r\n        },\r\n        {\r\n         
-    \"internalType\": \"uint256[]\",\r\n          \"name\": \"ids\",\r\n         
-    \"type\": \"uint256[]\"\r\n        }\r\n      ],\r\n      \"name\": \"balanceOfBatch\",\r\n     
-    \"outputs\": [\r\n        {\r\n          \"internalType\": \"uint256[]\",\r\n         
-    \"name\": \"\",\r\n          \"type\": \"uint256[]\"\r\n        }\r\n      ],\r\n     
-    \"stateMutability\": \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n   
-    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\": \"address\",\r\n         
-    \"name\": \"account\",\r\n          \"type\": \"address\"\r\n        },\r\n       
-    {\r\n          \"internalType\": \"address\",\r\n          \"name\": \"operator\",\r\n         
-    \"type\": \"address\"\r\n        }\r\n      ],\r\n      \"name\": \"isApprovedForAll\",\r\n     
-    \"outputs\": [\r\n        {\r\n          \"internalType\": \"bool\",\r\n         
-    \"name\": \"\",\r\n          \"type\": \"bool\"\r\n        }\r\n      ],\r\n     
-    \"stateMutability\": \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n   
-    {\r\n      \"inputs\": [],\r\n      \"name\": \"mintERC1155\",\r\n      \"outputs\":
-    [],\r\n      \"stateMutability\": \"nonpayable\",\r\n      \"type\": \"function\"\r\n   
-    },\r\n    {\r\n      \"inputs\": [],\r\n      \"name\": \"owner\",\r\n      \"outputs\":
-    [\r\n        {\r\n          \"internalType\": \"address\",\r\n          \"name\":
-    \"\",\r\n          \"type\": \"address\"\r\n        }\r\n      ],\r\n      \"stateMutability\":
-    \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\":
-    [\r\n        {\r\n          \"internalType\": \"address\",\r\n          \"name\":
-    \"from\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n         
-    \"internalType\": \"address\",\r\n          \"name\": \"to\",\r\n          \"type\":
-    \"address\"\r\n        },\r\n        {\r\n          \"internalType\": \"uint256[]\",\r\n         
-    \"name\": \"ids\",\r\n          \"type\": \"uint256[]\"\r\n        },\r\n       
-    {\r\n          \"internalType\": \"uint256[]\",\r\n          \"name\": \"amounts\",\r\n         
-    \"type\": \"uint256[]\"\r\n        },\r\n        {\r\n          \"internalType\":
-    \"bytes\",\r\n          \"name\": \"data\",\r\n          \"type\": \"bytes\"\r\n       
-    }\r\n      ],\r\n      \"name\": \"safeBatchTransferFrom\",\r\n      \"outputs\":
-    [],\r\n      \"stateMutability\": \"nonpayable\",\r\n      \"type\": \"function\"\r\n   
-    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\":
-    \"address\",\r\n          \"name\": \"from\",\r\n          \"type\": \"address\"\r\n       
-    },\r\n        {\r\n          \"internalType\": \"address\",\r\n          \"name\":
-    \"to\",\r\n          \"type\": \"address\"\r\n        },\r\n        {\r\n         
-    \"internalType\": \"uint256\",\r\n          \"name\": \"id\",\r\n          \"type\":
-    \"uint256\"\r\n        },\r\n        {\r\n          \"internalType\": \"uint256\",\r\n         
-    \"name\": \"amount\",\r\n          \"type\": \"uint256\"\r\n        },\r\n       
-    {\r\n          \"internalType\": \"bytes\",\r\n          \"name\": \"data\",\r\n         
-    \"type\": \"bytes\"\r\n        }\r\n      ],\r\n      \"name\": \"safeTransferFrom\",\r\n     
-    \"outputs\": [],\r\n      \"stateMutability\": \"nonpayable\",\r\n      \"type\":
-    \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n         
-    \"internalType\": \"address\",\r\n          \"name\": \"operator\",\r\n         
-    \"type\": \"address\"\r\n        },\r\n        {\r\n          \"internalType\":
-    \"bool\",\r\n          \"name\": \"approved\",\r\n          \"type\": \"bool\"\r\n       
-    }\r\n      ],\r\n      \"name\": \"setApprovalForAll\",\r\n      \"outputs\":
-    [],\r\n      \"stateMutability\": \"nonpayable\",\r\n      \"type\": \"function\"\r\n   
-    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n          \"internalType\":
-    \"bytes4\",\r\n          \"name\": \"interfaceId\",\r\n          \"type\": \"bytes4\"\r\n       
-    }\r\n      ],\r\n      \"name\": \"supportsInterface\",\r\n      \"outputs\":
-    [\r\n        {\r\n          \"internalType\": \"bool\",\r\n          \"name\":
-    \"\",\r\n          \"type\": \"bool\"\r\n        }\r\n      ],\r\n      \"stateMutability\":
-    \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\":
-    [\r\n        {\r\n          \"internalType\": \"uint8\",\r\n          \"name\":
-    \"num\",\r\n          \"type\": \"uint8\"\r\n        }\r\n      ],\r\n      \"name\":
-    \"transferBadge\",\r\n      \"outputs\": [],\r\n      \"stateMutability\": \"payable\",\r\n     
-    \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\": [\r\n        {\r\n         
-    \"internalType\": \"uint256\",\r\n          \"name\": \"\",\r\n          \"type\":
-    \"uint256\"\r\n        }\r\n      ],\r\n      \"name\": \"uri\",\r\n      \"outputs\":
-    [\r\n        {\r\n          \"internalType\": \"string\",\r\n          \"name\":
-    \"\",\r\n          \"type\": \"string\"\r\n        }\r\n      ],\r\n      \"stateMutability\":
-    \"view\",\r\n      \"type\": \"function\"\r\n    },\r\n    {\r\n      \"inputs\":
-    [],\r\n      \"name\": \"withdrawEther\",\r\n      \"outputs\": [],\r\n     
-    \"stateMutability\": \"nonpayable\",\r\n      \"type\": \"function\"\r\n    },\r\n   
-    {\r\n      \"stateMutability\": \"payable\",\r\n      \"type\": \"receive\"\r\n   
-    }\r\n  ]"
---- !u!4 &1467223055
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467223053}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 817324313}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1527987610
 GameObject:
   m_ObjectHideFlags: 0
@@ -8628,7 +8175,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1595508622}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 248569122}
+        m_TargetAssemblyTypeName: Web3Manager, Assembly-CSharp
+        m_MethodName: SendTransferBadge
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1609733917
 GameObject:
   m_ObjectHideFlags: 0
@@ -9174,68 +8733,6 @@ RectTransform:
   m_AnchoredPosition: {x: -9, y: -343}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1756025443
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1756025445}
-  - component: {fileID: 1756025444}
-  m_Layer: 0
-  m_Name: Logic - Login
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1756025444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756025443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a8fe9a821d6a40489bc529229aa1fbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loginButton: {fileID: 1465740941}
-  DisconnectButton: {fileID: 333408658}
-  UITouchLock: {fileID: 891057683}
-  walletAddress: {fileID: 738851162}
-  etherBalance: {fileID: 2111596745}
-  projectId: put your wallet connect project id
-  projectName: testProject
-  baseContext: unity-game
-  metadata:
-    Name: FlatTouchBlockChain
-    Description: FlatTouch add ERC-1155 Project
-    Url: https://www.notion.so/Flat-Touch-033de8a14e0841f7b7c5727d6b98399b
-    Icons: []
-    Redirect:
-      Native: 
-      Universal: 
-    VerifyUrl: 
-  walletConnectModal: {fileID: 888138686}
---- !u!4 &1756025445
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756025443}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1762611417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9410,233 +8907,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &1796824508
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1796824509}
-  - component: {fileID: 1796824510}
-  m_Layer: 5
-  m_Name: Content
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1796824509
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796824508}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1869977173}
-  - {fileID: 1109892908}
-  m_Father: {fileID: 164306167}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 980, y: 1720}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1796824510
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796824508}
-  m_CullTransparentMesh: 1
---- !u!1 &1797123752
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1797123753}
-  - component: {fileID: 1797123756}
-  - component: {fileID: 1797123755}
-  - component: {fileID: 1797123754}
-  m_Layer: 5
-  m_Name: CloseButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1797123753
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797123752}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 164306167}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 371, y: 648}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 1, y: 1}
---- !u!114 &1797123754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797123752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 164306168}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1797123755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797123752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: X
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 24f008f638e24b847ba5b4f4363c612c, type: 2}
-  m_sharedMaterial: {fileID: -1484675775767881599, guid: 24f008f638e24b847ba5b4f4363c612c, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: -15, y: 15, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1797123756
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797123752}
-  m_CullTransparentMesh: 1
 --- !u!1 &1822275391
 GameObject:
   m_ObjectHideFlags: 0
@@ -9967,7 +9237,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1853370233}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 248569122}
+        m_TargetAssemblyTypeName: Web3Manager, Assembly-CSharp
+        m_MethodName: SendTransferBadge
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1862964430
 GameObject:
   m_ObjectHideFlags: 0
@@ -10103,142 +9385,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862964430}
   m_CullTransparentMesh: 1
---- !u!1 &1869977172
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1869977173}
-  - component: {fileID: 1869977175}
-  - component: {fileID: 1869977174}
-  m_Layer: 5
-  m_Name: HeaderLabel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1869977173
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869977172}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1796824509}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34, y: 475}
-  m_SizeDelta: {x: 830, y: 258}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1869977174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869977172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: "\uC9C0\uAC11\uC744 \uC5F0\uACB0\uD558\uB824\uBA74 \uBA54\uD0C0\uB9C8\uC2A4\uD06C\uC5D0\uC11C\n\uC544\uB798
-    QR\uCF54\uB4DC\uB97C \uC2A4\uCE94\uD558\uC2ED\uC2DC\uC624"
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 24f008f638e24b847ba5b4f4363c612c, type: 2}
-  m_sharedMaterial: {fileID: -1484675775767881599, guid: 24f008f638e24b847ba5b4f4363c612c, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4281812585
-  m_fontColor: {r: 0.41176474, g: 0.27450982, b: 0.21568629, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 8
-  m_fontSizeMax: 16
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1869977175
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869977172}
-  m_CullTransparentMesh: 1
 --- !u!1 &1871420583
 GameObject:
   m_ObjectHideFlags: 0
@@ -10315,6 +9461,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871420583}
   m_CullTransparentMesh: 1
+--- !u!1 &1875503232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1875503235}
+  - component: {fileID: 1875503234}
+  - component: {fileID: 1875503233}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1875503233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875503232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1875503234
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875503232}
+  m_CullTransparentMesh: 1
+--- !u!224 &1875503235
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875503232}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 248569123}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 960, y: 2540}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1899697853
 GameObject:
   m_ObjectHideFlags: 0
@@ -10994,7 +10213,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2000825341}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 248569122}
+        m_TargetAssemblyTypeName: Web3Manager, Assembly-CSharp
+        m_MethodName: SendWithdrawEther
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2003513853
 GameObject:
   m_ObjectHideFlags: 0
@@ -11199,43 +10430,6 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &2011890723
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2011890724}
-  m_Layer: 5
-  m_Name: Container
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2011890724
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011890723}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 164306167}
-  m_Father: {fileID: 888138685}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2019101930
 GameObject:
@@ -11700,6 +10894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2077220104}
+  - component: {fileID: 2077220105}
   m_Layer: 5
   m_Name: BadgeUI
   m_TagString: Untagged
@@ -11728,6 +10923,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2077220105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077220103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c7af67bc58c94b8ff1277f92de2cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchLockUI: {fileID: 891057683}
+  lockSprite: {fileID: 21300000, guid: 9baedc91bed6e8a4babc15576960b8d3, type: 3}
+  unlockSprite: {fileID: 21300000, guid: 299a39a0c77989a419a3c4e9bca1db07, type: 3}
+  loadingSprite: {fileID: 21300000, guid: 8610994ab8c8e20418c8c280939f88ff, type: 3}
+  UIMain: {fileID: 2114751711}
+  connectButton: {fileID: 1465740939}
+  disconnectButton: {fileID: 333408656}
+  mintButtons:
+  - {fileID: 2086129869}
+  - {fileID: 1452885111}
+  - {fileID: 227052609}
+  - {fileID: 2139939252}
+  - {fileID: 1853370235}
+  - {fileID: 2084389199}
+  - {fileID: 1595508624}
+  badgeImages:
+  - {fileID: 1626454510}
+  - {fileID: 532272123}
+  - {fileID: 361856351}
+  - {fileID: 1344301731}
+  - {fileID: 2019101932}
+  - {fileID: 1871420585}
+  - {fileID: 419234405}
+  mintLoadingIndicators:
+  - {fileID: 712974513}
+  - {fileID: 717951080}
+  - {fileID: 1011619852}
+  - {fileID: 1670832189}
+  - {fileID: 1157142934}
+  - {fileID: 614881006}
+  - {fileID: 478704051}
+  walletAddressText: {fileID: 738851162}
+  etherBalanceText: {fileID: 2111596745}
+  withdrawEtherButton: {fileID: 2000825339}
+  developerMintButton: {fileID: 98587829}
 --- !u!1 &2083570023
 GameObject:
   m_ObjectHideFlags: 0
@@ -11913,7 +11155,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2084389197}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 248569122}
+        m_TargetAssemblyTypeName: Web3Manager, Assembly-CSharp
+        m_MethodName: SendTransferBadge
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2086129865
 GameObject:
   m_ObjectHideFlags: 0
@@ -12035,7 +11289,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2086129867}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 248569122}
+        m_TargetAssemblyTypeName: Web3Manager, Assembly-CSharp
+        m_MethodName: SendTransferBadge
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2087625331
 GameObject:
   m_ObjectHideFlags: 0
@@ -12558,7 +11824,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2139939250}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 248569122}
+        m_TargetAssemblyTypeName: Web3Manager, Assembly-CSharp
+        m_MethodName: SendTransferBadge
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2395466341133977263
 PrefabInstance:
   m_ObjectHideFlags: 0

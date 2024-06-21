@@ -10,6 +10,8 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 /[Aa]ssets/Samples/
+/[Aa]ssets/ExternalDependencyManager/
+/[Aa]ssets/MetaMask/
 /[Aa]ssets/walletconnect.json
 /[Aa]ssets/TextMesh Pro/Examples & Extras/
 /[Aa]ssets/WebGLTemplates/

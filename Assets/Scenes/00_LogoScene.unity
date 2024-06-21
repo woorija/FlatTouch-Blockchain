@@ -2100,6 +2100,95 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243921194}
   m_CullTransparentMesh: 1
+--- !u!1001 &1274068565
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 372153957041490424, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490424, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490424, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490424, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490424, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490424, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490424, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490424, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490424, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490424, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490424, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490426, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: m_Name
+      value: MetaMaskSdk
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490429, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: dappName
+      value: FlatTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490429, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: useInfura
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490429, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: infuraProjectId
+      value: 7ee9e19bc002405f90054c083076a219
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490429, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: rpcUrl.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490429, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: rpcUrl.Array.data[0].RpcUrl
+      value: https://nd-400-901-668.p2pify.com/e72814948798f6644fa1e51963fadfbd
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490429, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: rpcUrl.Array.data[0].ChainId
+      value: 0xaa36a7
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490429, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: _otherDefaultChainData.RpcUrls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490429, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: _otherDefaultChainData.RpcUrls.Array.data[0]
+      value: https://sepolia.infura.io/v3/7ee9e19bc002405f90054c083076a219
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
 --- !u!198 &1312809770 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 7125427154967163853, guid: c3381b4968fcdb045b023f7713ef74df, type: 3}
