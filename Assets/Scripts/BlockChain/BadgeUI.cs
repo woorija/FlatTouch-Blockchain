@@ -109,6 +109,10 @@ public class BadgeUI : MonoBehaviour
         mintButtons[_index].gameObject.SetActive(false);
         mintLoadingIndicators[_index].gameObject.SetActive(false);
     }
+    public bool IsEqualBadgeImage(int _index, Sprite _sprite)
+    {
+        return badgeImages[_index].sprite == _sprite;
+    }
     public async void TouckLock()
     {
         touchLockUI.SetActive(true);

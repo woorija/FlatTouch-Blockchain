@@ -46,6 +46,7 @@ public class Web3Manager : MonoBehaviour
         {
             badgeUI.MintLock(i);
         }
+        UIUpdate();
     }
     private void OnDestroy()
     {
@@ -69,7 +70,7 @@ public class Web3Manager : MonoBehaviour
         Debug.Log("GetSprite start");
         await GetBadgeSprites();
         Debug.Log("SetSprite start");
-        await SetAllBadgeImage();
+        await SetBadgeImages();
         badgeUI.TouchLockUIToggle(false);
     }
     void OnWalletDisconnected(object sender, EventArgs e)
@@ -116,7 +117,7 @@ public class Web3Manager : MonoBehaviour
     {
         MetaMaskUnity.Instance.Disconnect();
     }
-    public async Task SetAllBadgeImage()
+    public async Task SetBadgeImages()
     {
         for(int i = 0; i < hasBadge.Length; i++)
         {
@@ -133,6 +134,36 @@ public class Web3Manager : MonoBehaviour
                     badgeUI.SetBadgeImage(badgeSprites[i], i);
                 }
             }
+        }
+    }
+    public async void UIUpdate()
+    {
+        while (true)
+        {
+            for (int i = 0; i < hasBadge.Length; i++)
+            {
+                if (!badgeUI.IsEqualBadgeImage(i, badgeSprites[i]))
+                {
+                    if (i <= GameManager.Instance.stageCleared && !hasBadge[i])
+                    {
+                        await GetBalanceOf(i);
+                    }
+                }
+                if (hasBadge[i])
+                {
+                    if (badgeSprites[i] == null)
+                    {
+                        badgeUI.AlreadyMint(i);
+                    }
+                    else
+                    {
+                        badgeUI.SetBadgeImage(badgeSprites[i], i);
+                    }
+                }
+            }
+            string balance = await GetBalanceEther();
+            badgeUI.SetEtherBalanceText(balance);
+            await Task.Delay(10000);
         }
     }
     #region Contract
@@ -194,6 +225,15 @@ public class Web3Manager : MonoBehaviour
         catch (Exception ex)
         {
             Debug.Log(ex.Message);
+        }
+    }
+    async Task GetBalanceOf(int _index)
+    {
+        string account = wallet.SelectedAddress;
+        var balance = await customContract.BalanceOf(account, _index + 1);
+        if(balance != 0)
+        {
+            hasBadge[_index] = true;
         }
     }
     async Task GetBalanceOfBatch()
