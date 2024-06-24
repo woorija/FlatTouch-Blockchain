@@ -4,6 +4,7 @@ using evm.net;
 using evm.net.Factory;
 using evm.net.Models;
 using MetaMask;
+using MetaMask.Contracts;
 using MetaMask.Models;
 using MetaMask.Unity;
 using System;

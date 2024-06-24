@@ -2172,6 +2172,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 372153957041490429, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
+      propertyPath: useUniversalLinks
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372153957041490429, guid: 3fbb83b1db21d7445bfdd8865bac9626, type: 3}
       propertyPath: rpcUrl.Array.data[0].RpcUrl
       value: https://nd-400-901-668.p2pify.com/e72814948798f6644fa1e51963fadfbd
       objectReference: {fileID: 0}
