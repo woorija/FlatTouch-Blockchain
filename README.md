@@ -6,24 +6,20 @@
  - 작품명: **Flat Touch with BlockChain**
 
  - 플랫폼: Windows
- - 개발 기간: 2023.11.04~2023.12.08
+ - 개발 기간: 2023.11.04\~2023.12.08, 2024.06.19\~2024.06.24
  - 개발 환경: Unity 2021.3.19f1 (urp)
  - 기술 스택
    - 언어: C# , Solidity
-   - SDK 및 라이브러리: Web3 Unity SDK, Hardhat, OpenZeppelin
+   - SDK 및 라이브러리: MetaMask SDK, Hardhat, OpenZeppelin
  - 소개 : 기존에 작업했던 프로젝트에 블록체인을 접목한 사이드 프로젝트입니다.</br> 클리어한 스테이지 만큼 ERC-1155 토큰을 민팅할 수 있게 하여 민팅한 토큰 개수에 따라 스테이지를 해금할 수 있는 기능을 구현하였습니다.
- - [블록체인 연동 시연 영상](https://youtu.be/AXMxPCZP2v8)
+ - [블록체인 연동 시연 영상](https://youtu.be/GWAYWvzyn5I?si=VTT0wpqYuI9BaPYh)
  - [프로젝트 개발 과정 - 노션](https://woorija.notion.site/Flat-Touch-with-BlockChain-3a76c34ae3bd4c059c391d97c110b7a2)
  - 프로젝트에 사용된 솔리디티 [이더스캔 주소](https://sepolia.etherscan.io/address/0x0c4f74549ecf0564b01a6ab9ecf43591bd12b731#code)
 
 ## 개발 환경 세팅
 ### 사전 준비 사항
  - [Unity Hub](https://unity.com/kr/download)
- - [Wallet Connect](https://cloud.walletconnect.com/sign-in) 계정 생성
- - Web3 Unity SDK
-   - [Getting Started](https://docs.gaming.chainsafe.io/current/getting-started)
-   - [Project ID Registration](https://docs.gaming.chainsafe.io/current/project-id-registration)
-   - [Setting Up An RPC Node For web3.unity](https://docs.gaming.chainsafe.io/current/setting-up-an-rpc-node)
+ - [MetaMask SDK](https://assetstore.unity.com/packages/decentralization/infrastructure/metamask-246786)
 ### 설치 방법
 1. [Unity Hub](https://unity.com/kr/download)를 설치한다.
 2. `Unity 2021.3.19f1`버전의 에디터를 설치한다.
@@ -31,15 +27,18 @@
    ```bash
    git clone https://github.com/woorija/FlatTouch-Blockchain.git
    ```
-4. 아래 정보를 입력한다.
-   - WalletConnect에 Project ID 입력하기</br>![캡처_2023_12_12_18_32_46_944](https://github.com/woorija/FlatTouch-Blockchain/assets/77769870/16f032cb-1f5e-4de9-aec9-d5953f243ba8)
-
-   - ChainSafeServerSettings에 Project ID와 RPC 입력하기</br>![캡처_2023_12_12_18_33_18_996](https://github.com/woorija/FlatTouch-Blockchain/assets/77769870/ac5dd062-dc43-46a5-95c8-aca00f349f45)
-
-5. Unity에서 프로젝트 실행 후 빌드한다.
+4. `Unity Hub`에서 프로젝트를 추가하고 실행한다.
+5. 아래 과정을 따른다.
+   - `Window`탭 클릭 후 `Package Manager`탭을 클릭한다.
+   - `MetaMask`를 다운로드 후 임포트한다.
+   - `MetaMask`탭 클릭 후 `Install`탭을 클릭한다.
+   - `Newtonsoft.Json`, `JAR Resolver`를 인스톨하고, `MetaMask`를 인스톨한다.
+6. `Edit`탭 클릭 후 `Project Settings`탭 클릭 후 `Player`탭 클릭 후 `Other Settings`에서 `Scripting Backend`를 `IL2CPP`로 변경
+7. `File`탭 클릭 후 `Build Settings`에서 `IL2CPP Code Generation`을 `Faster (smaller) builds`로 변경
+8. 프로젝트를 빌드하고 실행한다.
 
 ### 주의 사항
- - Web3 Unity SDK가 열리지 않을 시 [SDK 공식 문서](https://docs.gaming.chainsafe.io/)를 찾아 설치하기
+ - 설치 방법을 따르지 않을 경우 빌드 시 오류가 발생합니다.
 
 ## 게임 실행
  1. [다운로드](https://drive.google.com/drive/folders/1lGUqq3UsQlfZixgAlJqm1OFKKWVZaPjQ)
